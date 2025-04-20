@@ -41,9 +41,9 @@ Es la herramienta visual para **crear formularios**. Permite agregar y organizar
 
 Cada formulario tiene **dos modos**:
 
-- **Modo Edición**: el usuario completa los campos del formulario. El resultado es un objeto con todos los datos, que se almacena en una base de datos documental como **MongoDB**. Cada formulario completado se vincula a su template, lo que permite interpretar correctamente la estructura de los datos.
+- **Modo Interactivo**: el usuario completa los campos del formulario. El resultado es un objeto con todos los datos, que se almacena en una base de datos documental como **MongoDB**. Cada formulario completado se vincula a su template, lo que permite interpretar correctamente la estructura de los datos.
 
-- **Modo Lectura**: se presenta la información registrada, sin permitir su edición.
+- **Modo Lectura**: se presenta la información registrada, sin permitir su edición, en un formato adecuado para la lectura.
 
 ---
 
@@ -58,5 +58,3 @@ Cada formulario tiene **dos modos**:
 Aunque es posible crear un formulario como una sola sección con todos los componentes apilados, se recomienda usar varias secciones. En los modos de edición y lectura, las secciones se muestran en un **acordeón**, permitiendo abrir una sola sección a la vez y manteniendo una interfaz más limpia y manejable.
 
 ---
-
-¿Querés que lo pasemos a un PDF o que lo adaptemos para presentación?
