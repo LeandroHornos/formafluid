@@ -1,0 +1,3 @@
+[20/04/2025 20:00] Se crea estructura basica con una pagina home y 3 paginas para la app: design, interact y read.
+
+[20/04/2025 20:10] Se instala shadcn para usar sus componentes
