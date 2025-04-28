@@ -2,8 +2,6 @@
 
 import { useState } from 'react'
 
-import { FormSection } from '@/apptypes'
-
 import SectionEditor from '@/components/design/SectionEditor'
 
 export default function Editor() {
@@ -13,12 +11,6 @@ export default function Editor() {
     console.log(columns)
   }
 
-  const section: FormSection = {
-    id: '1',
-    name: 'Sample Section 1',
-    order: 1,
-    columns: [],
-  }
 
   return (
     <div className="w-full">
