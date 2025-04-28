@@ -37,13 +37,14 @@ export const resolvers = {
   },
   
   Mutation: {
-    createFluidForm: async (_: any, { projectId, createdBy, name, sections }: any) => {
+    createFluidForm: async (_: any, { projectId, createdBy, name, status, sections }: any) => {
       await connectDB();
       const form = new FluidForm({
         id: Math.random().toString(36).substr(2, 9),
         projectId,
         createdBy,
         name,
+        status: status || 'new',
         sections: sections || [],
       });
       return await form.save();

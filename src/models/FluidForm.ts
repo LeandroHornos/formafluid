@@ -28,6 +28,12 @@ const FluidFormSchema = new Schema<FluidForm & Document>({
   projectId: { type: String, required: true },
   createdBy: { type: String, required: true },
   name: { type: String, required: true },
+  status: { 
+    type: String, 
+    required: true, 
+    enum: ['new', 'draft', 'closed'],
+    default: 'new'
+  },
   sections: { type: [FormSectionSchema], default: [] }
 }, {
   timestamps: true

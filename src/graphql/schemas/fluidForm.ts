@@ -28,6 +28,7 @@ export const typeDefs = gql`
     projectId: String!
     createdBy: String!
     name: String!
+    status: String!
     sections: [FormSection]
     createdAt: String
     updatedAt: String
@@ -44,6 +45,7 @@ export const typeDefs = gql`
       projectId: String!
       createdBy: String!
       name: String!
+      status: String
       sections: [FormSectionInput]
     ): FluidForm
     
