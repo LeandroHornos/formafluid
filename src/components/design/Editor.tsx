@@ -1,25 +1,26 @@
 'use client'
 
 import { useState } from 'react'
-import RowSelector from './RowSelector'
-import Row from './Row'
-
+import Section from '@/components/design/Section'
+import { FormSection } from '@/apptypes'
 export default function Editor() {
   const [rows, setRows] = useState<number[]>([])
 
   const handleAddRow = (columns: number) => {
-    setRows([...rows, columns])
+    console.log(columns)
+  }
+
+  const section: FormSection = {
+    id: '1',
+    name: 'Sample Section 1',
+    order: 1,
+    columns: [],
   }
 
   return (
     <div className="w-full">
-      {rows.map((columns, index) => (
-        <div key={index} className="mb-4">
-          <Row columns={columns} />
-          <RowSelector onAddRow={handleAddRow} />
-        </div>
-      ))}
-      {rows.length === 0 && <RowSelector onAddRow={handleAddRow} />}
+      <h1>Editor</h1>
+      <Section section={section} />
     </div>
   )
 } 

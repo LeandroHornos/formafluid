@@ -1,9 +1,12 @@
+'use client'
+
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { ReactNode } from 'react';
+import { NextSSRApolloClient, NextSSRInMemoryCache } from '@apollo/experimental-nextjs-app-support/ssr';
 
-const client = new ApolloClient({
+const client = new NextSSRApolloClient({
+  cache: new NextSSRInMemoryCache(),
   uri: '/api/graphql',
-  cache: new InMemoryCache(),
 });
 
 export function ApolloWrapper({ children }: { children: ReactNode }) {
