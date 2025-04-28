@@ -23,6 +23,7 @@ export interface FormSection {
     id: string;
     name: string;
     order: number;
+    split: number;
     columns?: FormColumn[];
 }
 

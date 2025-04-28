@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import { FormSection } from "@/apptypes";
 
 interface SectionEditorProps {
-  split: 1 | 2 | 3;
+  section: FormSection;
 }
 
-const SectionEditor: React.FC<SectionEditorProps> = ({ split }) => {
+const SectionEditor: React.FC<SectionEditorProps> = ({ section }) => {
+  const { split } = section;
   return (
     <div className="w-full flex flex-col md:flex-row gap-4 p-4">
       <div className="flex-1 h-[50vh] bg-red-500 rounded-lg">
@@ -23,7 +25,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ split }) => {
         </div>
       )}
     </div>
-    
+
   );
 };
 

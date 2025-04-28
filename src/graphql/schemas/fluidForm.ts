@@ -20,6 +20,7 @@ export const typeDefs = gql`
     id: String!
     name: String!
     order: Int!
+    split: Int!
     columns: [FormColumn]
   }
 
@@ -77,6 +78,7 @@ export const typeDefs = gql`
     id: String!
     name: String!
     order: Int!
+    split: Int!
     columns: [FormColumnInput]
   }
 

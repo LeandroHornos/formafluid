@@ -20,6 +20,7 @@ const FormSectionSchema = new Schema<FormSection>({
   id: { type: String, required: true },
   name: { type: String, required: true },
   order: { type: Number, required: true },
+  split: { type: Number, required: true, default: 1 },
   columns: { type: [FormColumnSchema], default: [] }
 });
 
