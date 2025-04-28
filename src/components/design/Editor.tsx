@@ -1,8 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import Section from '@/components/design/Section'
+
 import { FormSection } from '@/apptypes'
+
+import SectionEditor from '@/components/design/SectionEditor'
+
 export default function Editor() {
   const [rows, setRows] = useState<number[]>([])
 
@@ -20,7 +23,9 @@ export default function Editor() {
   return (
     <div className="w-full">
       <h1>Editor</h1>
-      <Section section={section} />
+      <SectionEditor split={1} />
+      <SectionEditor split={2} />
+      <SectionEditor split={3} />
     </div>
   )
 } 
