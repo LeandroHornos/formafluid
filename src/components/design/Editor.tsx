@@ -13,11 +13,19 @@ export default function Editor() {
     setSections([...sections, section]);
   };
 
+  const handleDeleteSection = (sectionId: string) => {
+    setSections(sections.filter(section => section.id !== sectionId));
+  };
+
   return (
     <div className="p-4 bg-green-100">
       <div className="w-full">
         {sections.map((section) => (
-          <SectionEditor key={section.id} section={section} />
+          <SectionEditor 
+            key={section.id} 
+            section={section} 
+            handleDeleteSection={handleDeleteSection}
+          />
         ))}
       </div>
       {/* Add a button to add a new section */}

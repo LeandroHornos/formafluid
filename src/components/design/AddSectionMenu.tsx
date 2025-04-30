@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FormSection } from "@/apptypes";
+import { nanoid } from "nanoid";
 
 interface AddSectionProps {
   handleAddSection: (section: FormSection) => void;
@@ -14,7 +15,7 @@ const AddSectionMenu = ({ handleAddSection, sections }: AddSectionProps) => {
         className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors duration-200"
         onClick={() =>
           handleAddSection({
-            id: "new-section",
+            id: nanoid(),
             name: "New Section",
             order: sections.length + 1,
             split: split,
