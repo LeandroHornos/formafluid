@@ -3,6 +3,7 @@
 import React from "react";
 import { FormSection } from "@/apptypes";
 import { ModalButton } from "@/components/ui/ModalButton";
+import TextInputEditor from "../form/TextInputEditor";
 
 interface SectionEditorProps {
   section: FormSection;
@@ -20,16 +21,22 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section, handleDeleteSect
         ×
       </button>
       <div className="flex-1 h-[50vh] bg-red-500 rounded-lg flex items-center justify-center">
-        <ModalButton/>
+        <ModalButton>
+          <TextInputEditor onSubmit={() => {}} />
+        </ModalButton>
       </div>
       {split >= 2 && (
         <div className="flex-1 h-[50vh] bg-blue-500 rounded-lg flex items-center justify-center">
-          <ModalButton/>
+          <ModalButton>
+            <p className="text-lg">Esto es el segundo popup</p>
+          </ModalButton>
         </div>
       )}
       {split === 3 && (
         <div className="flex-1 h-[50vh] bg-green-500 rounded-lg flex items-center justify-center">
-          <ModalButton/>
+          <ModalButton>
+            <p className="text-lg">Esto es el tercer popup</p>
+          </ModalButton>
         </div>
       )}
     </div>
