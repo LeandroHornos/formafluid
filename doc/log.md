@@ -52,3 +52,43 @@ export function ApolloWrapper({ children }: { children: ReactNode }) {
 - La implementación usa la versión experimental de Apollo para Next.js App Router
 - Se requiere la directiva 'use client' para componentes que usan Apollo Client
 - La configuración está optimizada para SSR (Server Side Rendering)
+
+# Log de Implementación de MiniWizardSlider
+
+## 2024-03-19: Creación del Sistema de Sliders Interactivos
+
+### Componentes Creados
+1. MiniWizardSlider:
+   - Slider interactivo para mostrar contenido en múltiples vistas
+   - Navegación entre vistas con botones y transiciones suaves
+   - Soporte para indicadores de posición
+   - Prop opcional para mostrar/ocultar botones de navegación
+   - Pasa funciones de navegación a los componentes hijos
+
+2. SampleTitleAndText:
+   - Componente de ejemplo que implementa la interfaz del MiniWizard
+   - Muestra título y texto con botones de navegación
+   - Diseño responsive y estilizado con Tailwind
+
+### Características Implementadas
+- Transiciones suaves entre vistas
+- Controles de navegación personalizables
+- Indicadores de posición para cada vista
+- Sistema de props para comunicación entre componentes
+- Integración con shadcn/ui para estilos consistentes
+- Soporte para componentes hijos con navegación propia
+
+### Uso del Componente
+```tsx
+<MiniWizardSlider showNavigationButtons={true}>
+  <TextInputEditor onSubmit={() => {}} />
+  <SampleTitleAndText title="Slider 2" text="Texto 2" />
+  <SampleTitleAndText title="Slider 3" text="Texto 3" />
+</MiniWizardSlider>
+```
+
+### Notas Importantes
+- Los componentes hijos deben implementar la interfaz MiniWizardChildProps
+- Las funciones de navegación (goToNext, goToPrevious) son opcionales
+- El componente se integra con ModalButton para mostrar contenido en modales
+- Diseño responsive y adaptable a diferentes tamaños de contenido

@@ -4,6 +4,8 @@ import React from "react";
 import { FormSection } from "@/apptypes";
 import { ModalButton } from "@/components/ui/ModalButton";
 import TextInputEditor from "../form/TextInputEditor";
+import { MiniWizardSlider } from "@/components/miniwizards/MiniWizardSlider";
+import SampleTitleAndText from "@/components/sample/SampleTitleAndText";
 
 interface SectionEditorProps {
   section: FormSection;
@@ -22,7 +24,11 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section, handleDeleteSect
       </button>
       <div className="flex-1 h-[50vh] bg-red-500 rounded-lg flex items-center justify-center">
         <ModalButton>
+          <MiniWizardSlider>
           <TextInputEditor onSubmit={() => {}} />
+            <SampleTitleAndText title="Slider 2" text="Texto 2" />
+            <SampleTitleAndText title="Slider 3" text="Texto 3" />
+          </MiniWizardSlider>
         </ModalButton>
       </div>
       {split >= 2 && (

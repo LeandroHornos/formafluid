@@ -9,9 +9,11 @@ interface TextInputEditorProps {
     required: boolean;
     disabled: boolean;
   }) => void;
+  goToNext?: () => void;
+  goToPrevious?: () => void;
 }
 
-const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit }) => {
+const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit, goToNext, goToPrevious }) => {
   const [values, setValues] = useState({
     value: "",
     placeholder: "",
@@ -85,9 +87,21 @@ const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit }) => {
         <label htmlFor="disabled" className="text-sm font-medium">Disabled</label>
       </div>
 
-      <Button type="submit" className="mt-4">
-        Guardar
-      </Button>
+      <div className="flex gap-2 mt-4">
+        {goToPrevious && (
+          <Button type="button" variant="outline" onClick={goToPrevious}>
+            Anterior
+          </Button>
+        )}
+        <Button type="submit" className="flex-1">
+          Guardar
+        </Button>
+        {goToNext && (
+          <Button type="button" variant="outline" onClick={goToNext}>
+            Siguiente
+          </Button>
+        )}
+      </div>
     </form>
   );
 };

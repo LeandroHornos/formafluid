@@ -27,12 +27,12 @@ export function ModalButton({ children }: ModalButtonProps) {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white w-[500px] h-[500px] rounded-lg p-6 relative">
             {children}
-            <Button
+            <button
               onClick={() => setIsOpen(false)}
-              className="absolute bottom-6 right-6"
+              className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-red-500 hover:bg-red-600 text-white rounded-full shadow-md transition-colors duration-200"
             >
-              Cerrar
-            </Button>
+              ×
+            </button>
           </div>
         </div>
       )}
