@@ -92,3 +92,52 @@ export function ApolloWrapper({ children }: { children: ReactNode }) {
 - Las funciones de navegación (goToNext, goToPrevious) son opcionales
 - El componente se integra con ModalButton para mostrar contenido en modales
 - Diseño responsive y adaptable a diferentes tamaños de contenido
+
+# Log de Implementación de MiniWizardSwitch
+
+## 2024-03-19: Creación del Sistema de Selección de MiniWizards
+
+### Componentes Creados
+1. MiniWizardSwitch:
+   - Selector de miniwizards con interfaz de botones
+   - Vista de grilla con 3 columnas para los botones
+   - Transición suave entre la vista de selección y el wizard
+   - Botón de retroceso con fondo semi-transparente
+   - Diseño responsive y estilizado con Tailwind
+
+### Características Implementadas
+- Grid de 3 columnas con botones centrados
+- Iconos de Material UI para cada tipo de wizard
+- Botones cuadrados con sombras y bordes redondeados
+- Transiciones suaves para las interacciones
+- Sistema de navegación intuitivo con botón de retroceso
+- Integración con ModalButton para mostrar contenido en modales
+
+### Uso del Componente
+```tsx
+const miniwizards = [
+  {
+    id: "text-input",
+    icon: TextFields,
+    component: TextInputMiniWizard
+  },
+  {
+    id: "checkbox",
+    icon: CheckBox,
+    component: () => <div>Checkbox Wizard (Coming soon)</div>
+  },
+  {
+    id: "radio",
+    icon: RadioButtonChecked,
+    component: () => <div>Radio Wizard (Coming soon)</div>
+  }
+];
+
+<MiniWizardSwitch miniwizards={miniwizards} />
+```
+
+### Notas Importantes
+- Los componentes de wizard deben ser compatibles con el sistema de navegación
+- Se mantiene la consistencia visual con el resto de la aplicación
+- El diseño es escalable para agregar más tipos de wizards
+- La interfaz es intuitiva y fácil de usar

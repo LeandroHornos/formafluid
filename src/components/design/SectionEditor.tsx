@@ -3,14 +3,32 @@
 import React from "react";
 import { FormSection } from "@/apptypes";
 import { ModalButton } from "@/components/ui/ModalButton";
-import TextInputEditor from "../form/TextInputEditor";
-import MiniWizardSlider from "@/components/miniwizards/MiniWizardSlider";
-import SampleTitleAndText from "@/components/sample/SampleTitleAndText";
-import FieldMiniWizard from "@/components/miniwizards/FieldMiniWizard";
+import MiniWizardSwitch from "@/components/miniwizards/MiniWizardSwitch";
+import TextInputMiniWizard from "@/components/miniwizards/TextInputMiniWizard";
+import { TextFields, CheckBox, RadioButtonChecked } from '@mui/icons-material';
+
 interface SectionEditorProps {
   section: FormSection;
   handleDeleteSection: (sectionId: string) => void;
 }
+
+const miniwizards = [
+  {
+    id: "text-input",
+    icon: TextFields,
+    component: TextInputMiniWizard
+  },
+  {
+    id: "checkbox",
+    icon: CheckBox,
+    component: () => <div>Checkbox Wizard (Coming soon)</div>
+  },
+  {
+    id: "radio",
+    icon: RadioButtonChecked,
+    component: () => <div>Radio Wizard (Coming soon)</div>
+  }
+];
 
 const SectionEditor: React.FC<SectionEditorProps> = ({
   section,
@@ -27,7 +45,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
       </button>
       <div className="flex-1 h-[50vh] bg-red-500 rounded-lg flex items-center justify-center">
         <ModalButton>
-          <FieldMiniWizard />
+          <MiniWizardSwitch miniwizards={miniwizards} />
         </ModalButton>
       </div>
       {split >= 2 && (

@@ -3,7 +3,7 @@ import MiniWizardSlider from "@/components/miniwizards/MiniWizardSlider";
 import TextInputEditor from "@/components/form/TextInputEditor";
 import SampleTitleAndText from "@/components/sample/SampleTitleAndText";
 
-const FieldMiniWizard = () => {
+const TextInputMiniWizard = () => {
   return (
     <MiniWizardSlider>
       <TextInputEditor onSubmit={() => {}} />
@@ -13,4 +13,4 @@ const FieldMiniWizard = () => {
   );
 };
 
-export default FieldMiniWizard;
+export default TextInputMiniWizard;
