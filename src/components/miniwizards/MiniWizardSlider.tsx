@@ -14,7 +14,7 @@ interface MiniWizardSliderProps {
   showNavigationButtons?: boolean;
 }
 
-export const MiniWizardSlider: React.FC<MiniWizardSliderProps> = ({ 
+const MiniWizardSlider: React.FC<MiniWizardSliderProps> = ({ 
   children, 
   className,
   showNavigationButtons = true 
@@ -93,3 +93,5 @@ export const MiniWizardSlider: React.FC<MiniWizardSliderProps> = ({
     </div>
   );
 }; 
+
+export default MiniWizardSlider;

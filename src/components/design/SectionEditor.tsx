@@ -4,15 +4,18 @@ import React from "react";
 import { FormSection } from "@/apptypes";
 import { ModalButton } from "@/components/ui/ModalButton";
 import TextInputEditor from "../form/TextInputEditor";
-import { MiniWizardSlider } from "@/components/miniwizards/MiniWizardSlider";
+import MiniWizardSlider from "@/components/miniwizards/MiniWizardSlider";
 import SampleTitleAndText from "@/components/sample/SampleTitleAndText";
-
+import FieldMiniWizard from "@/components/miniwizards/FieldMiniWizard";
 interface SectionEditorProps {
   section: FormSection;
   handleDeleteSection: (sectionId: string) => void;
 }
 
-const SectionEditor: React.FC<SectionEditorProps> = ({ section, handleDeleteSection }) => {
+const SectionEditor: React.FC<SectionEditorProps> = ({
+  section,
+  handleDeleteSection,
+}) => {
   const { split, id } = section;
   return (
     <div className="w-full flex flex-col md:flex-row gap-4 p-4 relative">
@@ -24,11 +27,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({ section, handleDeleteSect
       </button>
       <div className="flex-1 h-[50vh] bg-red-500 rounded-lg flex items-center justify-center">
         <ModalButton>
-          <MiniWizardSlider>
-          <TextInputEditor onSubmit={() => {}} />
-            <SampleTitleAndText title="Slider 2" text="Texto 2" />
-            <SampleTitleAndText title="Slider 3" text="Texto 3" />
-          </MiniWizardSlider>
+          <FieldMiniWizard />
         </ModalButton>
       </div>
       {split >= 2 && (
