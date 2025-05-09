@@ -61,7 +61,7 @@ Aunque es posible crear un formulario como una sola sección con todos los compo
 
 ### 5) PATRÓN DE COMPONENTES DE FORMULARIO
 
-Para cada campo del formulario en Formafluid, se utiliza un patrón de tres componentes relacionados, organizados en el mismo directorio. Este enfoque modular permite una gestión clara y eficiente de cada tipo de campo. Los tres componentes son:
+Para cada campo del formulario en Formafluid, se utiliza un patrón de cuatro componentes relacionados, organizados en el mismo directorio. Este enfoque modular permite una gestión clara y eficiente de cada tipo de campo. Los cuatro componentes son:
 
 1. **Componente de Configuración**: Este componente permite crear y gestionar las configuraciones específicas de cada campo. Proporciona una interfaz para definir propiedades como `placeholder`, `label`, `required`, entre otras, que son necesarias para personalizar el comportamiento del campo.
 
@@ -69,6 +69,8 @@ Para cada campo del formulario en Formafluid, se utiliza un patrón de tres comp
 
 3. **Componente de Interacción**: Este es el componente principal con el que los usuarios interactuarán al completar el formulario. Implementa toda la lógica necesaria para manejar la entrada de datos y la validación, asegurando que el campo funcione correctamente en el contexto del formulario.
 
-Este patrón de tres componentes se aplicará a todos los tipos de campos del formulario, asegurando consistencia y escalabilidad en el desarrollo de Formafluid.
+4. **Componente MiniWizard**: Este componente proporciona una interfaz paso a paso para configurar campos complejos o con múltiples opciones. Facilita la creación de configuraciones avanzadas mediante un proceso guiado, asegurando que todas las opciones necesarias sean consideradas y configuradas adecuadamente.
+
+Este patrón de cuatro componentes se aplicará a todos los tipos de campos del formulario, asegurando consistencia y escalabilidad en el desarrollo de Formafluid.
 
 ---

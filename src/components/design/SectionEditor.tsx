@@ -4,7 +4,7 @@ import React from "react";
 import { FormSection } from "@/apptypes";
 import { ModalButton } from "@/components/ui/ModalButton";
 import MiniWizardSwitch from "@/components/miniwizards/MiniWizardSwitch";
-import TextInputMiniWizard from "@/components/miniwizards/TextInputMiniWizard";
+import TextInputMiniWizard from "@/components/form/text-input/TextInputMiniWizard";
 import { TextFields, CheckBox, RadioButtonChecked } from '@mui/icons-material';
 
 interface SectionEditorProps {
