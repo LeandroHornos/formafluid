@@ -157,3 +157,20 @@ const miniwizards = [
 ### Notas Importantes
 - Asegurarse de que los componentes padres manejen `value` y `onChange` adecuadamente.
 - Verificar que las configuraciones pasadas a `TextInputEditor` sean correctas y completas.
+
+# Log de Implementación de FormBlockEditor
+
+## 2025-04-20: Creación del Componente FormBlockEditor
+
+### Descripción
+- Se ha creado el componente `FormBlockEditor` siguiendo la lógica en cascada utilizada en la aplicación.
+- `Editor` renderiza una serie de `SectionEditors` a partir de las `sections`.
+- `SectionEditor` ahora renderiza una serie de `FormBlockEditors` a partir de los `formBlocks`.
+- En el futuro, `FormBlockEditors` renderizarán una serie de `FieldMocks` a partir de los `fields`.
+
+### Razones para el Cambio
+- Esta lógica en cascada se alinea con la estructura de la base de datos, permitiendo una gestión más eficiente y escalable de los componentes del formulario.
+
+### Notas Importantes
+- La estructura modular facilita la adición de nuevos tipos de bloques y campos en el futuro.
+- La implementación asegura que cada nivel de la jerarquía de componentes maneje su propia lógica de renderizado y configuración.

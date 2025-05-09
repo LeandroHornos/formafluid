@@ -74,3 +74,15 @@ Para cada campo del formulario en Formafluid, se utiliza un patrón de cuatro co
 Este patrón de cuatro componentes se aplicará a todos los tipos de campos del formulario, asegurando consistencia y escalabilidad en el desarrollo de Formafluid.
 
 ---
+
+### 6) LÓGICA EN CASCADA DE COMPONENTES
+
+La aplicación sigue una lógica en cascada para la gestión de componentes, que se alinea con la estructura de la base de datos:
+
+- **Editor**: Renderiza una serie de `SectionEditors` a partir de las `sections` definidas en la base de datos.
+- **SectionEditor**: Renderiza una serie de `FormBlockEditors` a partir de los `formBlocks`.
+- **FormBlockEditor**: En el futuro, renderizará una serie de `FieldMocks` a partir de los `fields`.
+
+Esta estructura modular permite una gestión clara y eficiente de los componentes del formulario, asegurando que cada nivel maneje su propia lógica de renderizado y configuración. Además, facilita la escalabilidad y la adición de nuevos tipos de bloques y campos en el futuro.
+
+---
