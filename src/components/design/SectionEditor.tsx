@@ -2,34 +2,14 @@
 
 import React from "react";
 import { FormSection } from "@/apptypes";
-import { ModalButton } from "@/components/ui/ModalButton";
-import MiniWizardSwitch from "@/components/miniwizards/MiniWizardSwitch";
-import TextInputMiniWizard from "@/components/form/text-input/TextInputMiniWizard";
-import { TextFields, CheckBox, RadioButtonChecked } from "@mui/icons-material";
-import FormBlockEditor from "./FormBlock";
+import FormBlockEditor from "./FormBlockEditor";
 
 interface SectionEditorProps {
   section: FormSection;
   handleDeleteSection: (sectionId: string) => void;
 }
 
-const miniwizards = [
-  {
-    id: "text-input",
-    icon: TextFields,
-    component: TextInputMiniWizard,
-  },
-  {
-    id: "checkbox",
-    icon: CheckBox,
-    component: () => <div>Checkbox Wizard (Coming soon)</div>,
-  },
-  {
-    id: "radio",
-    icon: RadioButtonChecked,
-    component: () => <div>Radio Wizard (Coming soon)</div>,
-  },
-];
+
 
 // Define an array of form blocks with background color and order
 // Up to 3 form blocks are allowed for each section
@@ -56,11 +36,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
       </button>
       {/* Render form blocks based on the split value */}
       {formBlocks.slice(0, split).map(({ backgroundColor, order }) => (
-        <FormBlockEditor key={`form-block-${order}`} backgroundColor={backgroundColor}>
-          <ModalButton>
-            <MiniWizardSwitch miniwizards={miniwizards} />
-          </ModalButton>
-        </FormBlockEditor>
+        <FormBlockEditor key={`form-block-${order}`} backgroundColor={backgroundColor} />
       ))}
     </div>
   );
