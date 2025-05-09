@@ -141,3 +141,19 @@ const miniwizards = [
 - Se mantiene la consistencia visual con el resto de la aplicación
 - El diseño es escalable para agregar más tipos de wizards
 - La interfaz es intuitiva y fácil de usar
+
+# Log de Cambios en TextInput y TextInputEditor
+
+## 2025-04-20: Refactorización de TextInput y TextInputEditor
+
+### Cambios Realizados
+- **TextInput**: Se modificó para que reciba una única prop `config` que agrupa las configuraciones opcionales (`placeholder`, `label`, `required`, `disabled`, `className`). Las propiedades `value` y `onChange` se reciben directamente, fuera del objeto `config`.
+- **TextInputEditor**: Se actualizó para que solo maneje las configuraciones que van dentro de `config`, excluyendo `value` y `onChange`, que ahora son manejadas por el componente padre.
+
+### Razones para el Cambio
+- Simplificar la interfaz del componente `TextInput` al agrupar configuraciones opcionales en un solo objeto.
+- Mejorar la claridad y separación de responsabilidades entre el editor y el componente de entrada.
+
+### Notas Importantes
+- Asegurarse de que los componentes padres manejen `value` y `onChange` adecuadamente.
+- Verificar que las configuraciones pasadas a `TextInputEditor` sean correctas y completas.

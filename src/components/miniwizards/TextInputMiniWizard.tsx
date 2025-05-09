@@ -1,6 +1,6 @@
 import React from "react";
 import MiniWizardSlider from "@/components/miniwizards/MiniWizardSlider";
-import TextInputEditor from "@/components/form/TextInputEditor";
+import TextInputEditor from "@/components/form/text-input/TextInputEditor";
 import SampleTitleAndText from "@/components/sample/SampleTitleAndText";
 
 const TextInputMiniWizard = () => {

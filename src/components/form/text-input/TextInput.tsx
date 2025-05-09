@@ -1,9 +1,7 @@
 import React from "react";
 import { Input } from "@/components/ui/input";
 
-interface TextInputProps {
-  value: string;
-  onChange: (value: string) => void;
+interface TextInputConfig {
   placeholder?: string;
   label?: string;
   required?: boolean;
@@ -11,14 +9,16 @@ interface TextInputProps {
   className?: string;
 }
 
+interface TextInputProps {
+  value: string;
+  onChange: (value: string) => void;
+  config: TextInputConfig;
+}
+
 const TextInput: React.FC<TextInputProps> = ({
   value,
   onChange,
-  placeholder,
-  label,
-  required = false,
-  disabled = false,
-  className,
+  config: { placeholder, label, required = false, disabled = false, className },
 }) => {
   return (
     <div className="flex flex-col gap-2">
