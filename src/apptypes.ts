@@ -25,11 +25,11 @@ export interface FormSection {
     name: string;
     order: number;
     split: number;
-    columns?: FormColumn[];
+    columns?: FormBlock[];
 }
 
 // Interface defining a column within a section containing fields
-export interface FormColumn {
+export interface FormBlock {
     id: string;
     name: string;
     order: number;

@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { FluidForm, FormSection, FormColumn, FormField } from '../apptypes';
+import { FluidForm, FormSection, FormBlock, FormField } from '../apptypes';
 
 const FormFieldSchema = new Schema<FormField>({
   id: { type: String, required: true },
@@ -9,7 +9,7 @@ const FormFieldSchema = new Schema<FormField>({
   config: { type: Schema.Types.Mixed, default: {} }
 });
 
-const FormColumnSchema = new Schema<FormColumn>({
+const FormBlockSchema = new Schema<FormBlock>({
   id: { type: String, required: true },
   name: { type: String, required: true },
   order: { type: Number, required: true },
@@ -21,7 +21,7 @@ const FormSectionSchema = new Schema<FormSection>({
   name: { type: String, required: true },
   order: { type: Number, required: true },
   split: { type: Number, required: true, default: 1 },
-  columns: { type: [FormColumnSchema], default: [] }
+  columns: { type: [FormBlockSchema], default: [] }
 });
 
 const FluidFormSchema = new Schema<FluidForm & Document>({

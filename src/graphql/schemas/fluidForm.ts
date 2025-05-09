@@ -9,7 +9,7 @@ export const typeDefs = gql`
     propvalues: JSON
   }
 
-  type FormColumn {
+  type FormBlock {
     id: String!
     name: String!
     order: Int!
@@ -21,7 +21,7 @@ export const typeDefs = gql`
     name: String!
     order: Int!
     split: Int!
-    columns: [FormColumn]
+    columns: [FormBlock]
   }
 
   type FluidForm {
@@ -67,7 +67,7 @@ export const typeDefs = gql`
     propvalues: JSON
   }
 
-  input FormColumnInput {
+  input FormBlockInput {
     id: String!
     name: String!
     order: Int!
@@ -79,7 +79,7 @@ export const typeDefs = gql`
     name: String!
     order: Int!
     split: Int!
-    columns: [FormColumnInput]
+    columns: [FormBlockInput]
   }
 
   scalar JSON
