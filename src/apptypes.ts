@@ -16,6 +16,7 @@ export interface FluidForm {
     createdBy: string;
     name: string;
     sections?: FormSection[];
+    status: 'new' | 'draft' | 'closed';
 }
 
 // Interface defining a form section with order and columns
@@ -41,6 +42,6 @@ export interface FormField {
     name: string;
     order: number;
     type: string;
-    propvalues: { [key: string]: any };
+    config: { [key: string]: any };
 }
 

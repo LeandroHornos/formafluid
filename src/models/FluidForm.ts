@@ -6,7 +6,7 @@ const FormFieldSchema = new Schema<FormField>({
   name: { type: String, required: true },
   order: { type: Number, required: true },
   type: { type: String, required: true },
-  propvalues: { type: Schema.Types.Mixed, default: {} }
+  config: { type: Schema.Types.Mixed, default: {} }
 });
 
 const FormColumnSchema = new Schema<FormColumn>({
