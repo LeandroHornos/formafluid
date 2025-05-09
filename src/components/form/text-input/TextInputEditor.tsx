@@ -12,7 +12,11 @@ interface TextInputEditorProps {
   goToPrevious?: () => void;
 }
 
-const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit, goToNext, goToPrevious }) => {
+const TextInputEditor: React.FC<TextInputEditorProps> = ({
+  onSubmit,
+  goToNext,
+  goToPrevious,
+}) => {
   const [config, setConfig] = useState({
     placeholder: "",
     label: "",
@@ -26,9 +30,9 @@ const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit, goToNext, g
   };
 
   const handleChange = (field: string, value: string | boolean) => {
-    setConfig(prev => ({
+    setConfig((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
@@ -62,7 +66,9 @@ const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit, goToNext, g
           onChange={(e) => handleChange("required", e.target.checked)}
           id="required"
         />
-        <label htmlFor="required" className="text-sm font-medium">Required</label>
+        <label htmlFor="required" className="text-sm font-medium">
+          Required
+        </label>
       </div>
 
       <div className="flex items-center gap-2">
@@ -72,26 +78,28 @@ const TextInputEditor: React.FC<TextInputEditorProps> = ({ onSubmit, goToNext, g
           onChange={(e) => handleChange("disabled", e.target.checked)}
           id="disabled"
         />
-        <label htmlFor="disabled" className="text-sm font-medium">Disabled</label>
+        <label htmlFor="disabled" className="text-sm font-medium">
+          Disabled
+        </label>
       </div>
 
       <div className="flex gap-2 mt-4">
-        {goToPrevious && (
+        {/*         {goToPrevious && (
           <Button type="button" variant="outline" onClick={goToPrevious}>
             Anterior
           </Button>
-        )}
+        )} */}
         <Button type="submit" className="flex-1">
           Guardar
         </Button>
-        {goToNext && (
+        {/*         {goToNext && (
           <Button type="button" variant="outline" onClick={goToNext}>
             Siguiente
           </Button>
-        )}
+        )} */}
       </div>
     </form>
   );
 };
 
-export default TextInputEditor; 
+export default TextInputEditor;

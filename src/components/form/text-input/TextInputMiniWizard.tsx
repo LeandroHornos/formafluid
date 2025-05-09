@@ -7,8 +7,6 @@ const TextInputMiniWizard = () => {
   return (
     <MiniWizardSlider>
       <TextInputEditor onSubmit={() => {}} />
-      <SampleTitleAndText title="Slider 2" text="Texto 2" />
-      <SampleTitleAndText title="Slider 3" text="Texto 3" />
     </MiniWizardSlider>
   );
 };

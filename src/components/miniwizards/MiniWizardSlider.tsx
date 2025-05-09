@@ -9,7 +9,7 @@ interface MiniWizardChildProps {
 }
 
 interface MiniWizardSliderProps {
-  children: React.ReactElement<MiniWizardChildProps>[];
+  children: React.ReactElement<MiniWizardChildProps> | React.ReactElement<MiniWizardChildProps>[];
   className?: string;
   showNavigationButtons?: boolean;
 }
@@ -42,6 +42,8 @@ const MiniWizardSlider: React.FC<MiniWizardSliderProps> = ({
     return child;
   });
 
+  const showButtons = showNavigationButtons && React.Children.count(children) > 1;
+
   return (
     <div className={cn("relative w-full h-full flex flex-col", className)}>
       <div className="flex-1 relative overflow-hidden">
@@ -57,7 +59,7 @@ const MiniWizardSlider: React.FC<MiniWizardSliderProps> = ({
         </div>
       </div>
 
-      {showNavigationButtons && (
+      {showButtons && (
         <div className="flex justify-center items-center gap-2 py-4">
           <Button
             variant="outline"
